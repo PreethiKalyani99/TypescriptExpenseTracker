@@ -1,35 +1,7 @@
-import React, {useState} from "react";
-import { useDispatch } from "react-redux";
-import { addTransaction } from "../redux/expenseTrackerSlice";
+import { AddTransactionProps } from "../types/types";
 
-export function AddTransaction(){
-    const [singleTransactionHistory, setSingleTransactionHistory] = useState({
-        text: '',
-        amount: ''
-    })
-    const dispatch = useDispatch()
-
-    function handleInputChange(e: React.ChangeEvent<HTMLInputElement>): void{
-        const {name, value} = e.target
-        setSingleTransactionHistory({
-            ...singleTransactionHistory,
-            [name]: value
-        })
-    }
-
-    function handleTransactionHistory(e: React.FormEvent<HTMLFormElement>): void{
-        e.preventDefault()
-        const transaction = {
-            text: singleTransactionHistory.text,
-            amount: parseFloat(singleTransactionHistory.amount),
-            transactionType: parseFloat(singleTransactionHistory.amount) < 0 ? 'expense' : 'income'
-          }
-        dispatch(addTransaction(transaction))
-        setSingleTransactionHistory({
-            text: '',
-            amount: ''
-        })
-    }
+export function AddTransaction({singleTransactionHistory, handleTransactionHistory, handleInputChange}: AddTransactionProps){
+   
     return (
         <div className="mt-5">
            <h3 className="add fs-5 fw-bold">Add New Transaction</h3>

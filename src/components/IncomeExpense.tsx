@@ -1,11 +1,6 @@
-import { TransactionHistoryProps } from "../types/types"
+import { IncomeExpenseProp } from "../types/types"
 
-export function IncomeExpense({ totalTransactionHistory }: TransactionHistoryProps){
-    
-    const {income, expense} = totalTransactionHistory.reduce((acc, cur) => {
-        cur.transactionType === 'income' ? acc.income += cur.amount : acc.expense += cur.amount
-        return acc
-    }, {income: 0, expense: 0})
+export function IncomeExpense({ income, expense }: IncomeExpenseProp){
     
     return(
         <>
@@ -16,7 +11,7 @@ export function IncomeExpense({ totalTransactionHistory }: TransactionHistoryPro
                 </span>
                 <span className="row">
                     <span className="col income-amount">Rs.{income}</span>
-                    <span className="col expense-amount">Rs.{expense.toString().length > 1 ? expense.toString().substring(1) : expense}</span>
+                    <span className="col expense-amount">Rs.{expense}</span>
                 </span>
             </div>
         </>

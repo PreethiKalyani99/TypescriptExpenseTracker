@@ -1,10 +1,6 @@
-import { TransactionHistoryProps } from "../types/types"
+import { AvailableBalanceProp } from "../types/types"
 
-export function CurrentBalance({ totalTransactionHistory }: TransactionHistoryProps){
-    let availableBalance: number = totalTransactionHistory.reduce((acc,cur) => {
-        acc += cur.amount
-        return acc
-    }, 0)
+export function CurrentBalance({availableBalance}: AvailableBalanceProp){
 
     return (
         <>
