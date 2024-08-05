@@ -1,16 +1,19 @@
+export enum TransactionType {
+    Expense = 'expense',
+    Income = 'income'
+}
+
 export type Transaction = {
     text: string
     amount: number
-    transactionType: string
+    transactionType: TransactionType
 }
 
 export type TransactionHistoryProps = {
     totalTransactionHistory : Transaction[]
 }
 
-export type SingleTransactionProps = {
-    text: string
-    amount: number
+export type SingleTransactionProps = Transaction & {
     id: number
 }
 
