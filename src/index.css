@@ -1,13 +1,122 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.parent-container{
+  text-align: center;
+  margin-top: 5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title{
+  font-family: monospace;
+}
+
+.balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .add-btn{
+  display: flex;
+}
+
+.balance-text{
+  font-size: 23px;
+}
+.balance-amount{
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.income-expense, .transaction-container{
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.income-expense{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.income, .income-amount{
+  display: flex;
+  margin-left: 10%;
+}
+
+.income-amount{
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.expense-amount{
+  color: #c0392b;
+  font-weight: bold
+}
+
+.delete-position, .delete-position-left{
+  display: flex;
+}
+
+.transaction-container{
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.red{
+  border-right: 5px solid #c0392b;
+}
+
+.green{
+  border-right: 5px solid #2ecc71; 
+}
+
+.delete-button{
+  background-color: #e74c3c;
+  border: none;
+  height: 5%;
+  display: flex;
+  align-self: center;
+  margin-left: 5%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  display: inline-block;
+}
+
+.input-text, .input-amount, .add-btn{
+  padding: 5px;
+}
+
+.add-btn{
+  display: flex;
+  justify-content: center;
+  margin-left: 0%;
+}
+
+.balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .income-expense, .line{
+  margin-left: 40% !important;
+}
+
+.income-expense, .line, .input-text, .input-amount, .add-btn, .transaction-container{
+  width: 20%;
+}
+
+
+.delete-button{
+  margin-left: 39%;
+}
+
+.transaction-container{
+  width: 20%;
+}
+
+
+@media (max-width: 750px) {
+  .balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .income-expense, .line{
+    margin-left: 10% !important;
+  }
+  
+  .income-expense, .line, .input-text, .input-amount, .add-btn, .transaction-container{
+    width: 80%;
+  }
+
+  .delete-button{
+    margin-left: 5%;
+  }
 }
