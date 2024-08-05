@@ -1,15 +1,8 @@
-type Transaction = {
-    text: string
-    amount: number
-}
+import { TransactionHistoryProps } from "../types/types"
 
-type TransactionHistoryProps = {
-    totalTransactionHistory : Transaction[]
-}
 export function CurrentBalance({ totalTransactionHistory }: TransactionHistoryProps){
     let availableBalance: number = totalTransactionHistory.reduce((acc,cur) => {
-        let money = cur.amount
-        acc += money
+        acc += cur.amount
         return acc
     }, 0)
 

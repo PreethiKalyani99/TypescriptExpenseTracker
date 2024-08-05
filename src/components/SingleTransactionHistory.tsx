@@ -1,12 +1,9 @@
 import React, {useState} from "react";
 import { deleteTransaction } from "../redux/expenseTrackerSlice";
 import { useDispatch } from "react-redux";
+import { SingleTransactionProps } from "../types/types";
 
-type SingleTransactionProps = {
-    id: number
-    text: string
-    amount: number
-}
+
 export function SingleTrasactionHistory(props: SingleTransactionProps){
     const [isHover, setIsHover] = useState(false)
     const dispatch = useDispatch()

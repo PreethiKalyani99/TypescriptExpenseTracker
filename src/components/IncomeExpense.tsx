@@ -1,11 +1,4 @@
-type Transaction = {
-    text: string
-    amount: number
-}
-
-type TransactionHistoryProps = {
-    totalTransactionHistory : Transaction[]
-}
+import { TransactionHistoryProps } from "../types/types"
 
 export function IncomeExpense({ totalTransactionHistory }: TransactionHistoryProps){
     let expense = 0, income = 0

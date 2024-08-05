@@ -1,13 +1,6 @@
 import { SingleTrasactionHistory } from "./SingleTransactionHistory";
- 
-type Transaction = {
-    text: string
-    amount: number
-}
+import { TransactionHistoryProps } from "../types/types";
 
-type TransactionHistoryProps = {
-    totalTransactionHistory : Transaction[]
-}
 export function TransactionHistory({ totalTransactionHistory }: TransactionHistoryProps){
 
     return (
