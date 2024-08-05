@@ -1,12 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Transaction } from "../types/types";
+import { TransactionHistoryProps } from "../types/types";
 
-
-type Transaction = {
-    text : string
-    amount: number
-}
-
-const initialState: { totalTransactionHistory: Transaction[] } = {
+const initialState: TransactionHistoryProps = {
     totalTransactionHistory: JSON.parse(localStorage.getItem('transaction') || '[]')
   }
 export const expenseTrackerSlice = createSlice({
