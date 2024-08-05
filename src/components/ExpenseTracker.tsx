@@ -6,6 +6,7 @@ import { CurrentBalance } from "./CurrentBalance";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { addTransaction } from "../redux/expenseTrackerSlice";
+import { TransactionType, Transaction } from "../types/types";
 
 export function ExpenseTracker(){
     const [singleTransactionHistory, setSingleTransactionHistory] = useState({
@@ -36,11 +37,11 @@ export function ExpenseTracker(){
 
     function handleTransactionHistory(e: React.FormEvent<HTMLFormElement>): void{
         e.preventDefault()
-        const transaction = {
+        const transaction: Transaction = {
             text: singleTransactionHistory.text,
             amount: parseFloat(singleTransactionHistory.amount),
-            transactionType: parseFloat(singleTransactionHistory.amount) < 0 ? 'expense' : 'income'
-          }
+            transactionType: parseFloat(singleTransactionHistory.amount) < 0 ? TransactionType.Expense : TransactionType.Income
+        }
         dispatch(addTransaction(transaction))
         setSingleTransactionHistory({
             text: '',

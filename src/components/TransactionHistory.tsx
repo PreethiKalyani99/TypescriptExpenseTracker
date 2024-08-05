@@ -14,6 +14,7 @@ export function TransactionHistory({ totalTransactionHistory }: TransactionHisto
                         id={index}
                         amount={transaction.amount}
                         text={transaction.text}
+                        transactionType={transaction.transactionType}
                     />
                     })
                 ) : ''
