@@ -1,16 +1,12 @@
 import { TransactionHistoryProps } from "../types/types"
 
 export function IncomeExpense({ totalTransactionHistory }: TransactionHistoryProps){
-    let expense = 0, income = 0
-    totalTransactionHistory.forEach(data => {
-        let money = data.amount
-        if(money < 0){
-            expense += money
-        }
-        else{
-            income += money
-        }
-    })
+    
+    const {income, expense} = totalTransactionHistory.reduce((acc, cur) => {
+        cur.transactionType === 'income' ? acc.income += cur.amount : acc.expense += cur.amount
+        return acc
+    }, {income: 0, expense: 0})
+    
     return(
         <>
             <div  className="row income-expense mt-3">

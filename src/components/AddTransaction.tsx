@@ -21,7 +21,8 @@ export function AddTransaction(){
         e.preventDefault()
         const transaction = {
             text: singleTransactionHistory.text,
-            amount: parseFloat(singleTransactionHistory.amount)
+            amount: parseFloat(singleTransactionHistory.amount),
+            transactionType: parseFloat(singleTransactionHistory.amount) < 0 ? 'expense' : 'income'
           }
         dispatch(addTransaction(transaction))
         setSingleTransactionHistory({

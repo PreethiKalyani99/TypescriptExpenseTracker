@@ -1,6 +1,7 @@
 export type Transaction = {
     text: string
     amount: number
+    transactionType: string
 }
 
 export type TransactionHistoryProps = {
